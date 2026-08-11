@@ -1,0 +1,7 @@
+# Database Configuration Template
+# Copy this file to config.local.properties and update the credentials as needed.
+# config.local.properties is gitignored and will not be committed.
+
+db.url=jdbc:mysql://localhost:3306/ghana_courier_dso?useSSL=false&serverTimezone=UTC
+db.user=root
+db.password=YOUR_PASSWORD_HERE
