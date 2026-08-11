@@ -1,0 +1,23 @@
+# Maven
+target/
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+out/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database credentials / local config
+config.local.properties
+*.env
+
+# Logs
+*.log
+
+# Performance experiment raw output (keep results/ committed, ignore scratch)
+scratch/
