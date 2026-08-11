@@ -1,0 +1,68 @@
+location_id,name,area,location_type,x_coord,y_coord
+L001,Auntie Muni's Kitchen,East Legon,Vendor,5.688,-0.206
+L002,Papaye Express,McCarthy Hill,Vendor,5.708,-0.123
+L003,Osu Night Market Grill,Legon,Vendor,5.695,-0.044
+L004,Kwame's Waakye Spot,Dansoman,Vendor,5.72,-0.258
+L005,Frankie's Bakery,Kasoa,Vendor,5.654,-0.187
+L006,Chicken Republic,Cantonments,Vendor,5.695,-0.12
+L007,Champs Sports Bar Kitchen,McCarthy Hill,Vendor,5.697,0.074
+L008,KFC Delivery Hub,McCarthy Hill,Vendor,5.725,-0.119
+L009,Santoku Express,McCarthy Hill,Vendor,5.622,-0.103
+L010,Sanaa Lounge Kitchen,Abelenkpe,Vendor,5.676,-0.104
+L011,Buka Restaurant,Ogbojo,Vendor,5.665,-0.264
+L012,Coco Vanilla Cafe,Circle,Vendor,5.645,-0.078
+L013,Rhapsody's Kitchen,Cantonments,Vendor,5.746,-0.015
+L014,Container Restaurant,Labone,Vendor,5.562,-0.035
+L015,Pinocchio Pizza,Tesano,Vendor,5.628,0.06
+L016,Kokrobite Fish Grill,Sowutuom,Vendor,5.697,0.091
+L017,Vendor Mart Groceries,Circle,Vendor,5.605,-0.246
+L018,MaxMart Express,Labone,Vendor,5.711,-0.023
+L019,Melcom Pharmacy,Adenta,Vendor,5.659,-0.071
+L020,Ernest Chemist,Osu,Vendor,5.715,-0.113
+L021,Palace Pharmacy,Dzorwulu,Vendor,5.604,-0.27
+L022,Osu Residential Zone,Osu,CustomerZone,5.655,-0.018
+L023,Adenta Residential Zone,Adenta,CustomerZone,5.669,-0.196
+L024,Madina Residential Zone,Madina,CustomerZone,5.608,-0.148
+L025,East Legon Residential Zone,East Legon,CustomerZone,5.674,-0.159
+L026,Tema Residential Zone,Tema,CustomerZone,5.687,0.002
+L027,Circle Residential Zone,Circle,CustomerZone,5.592,-0.202
+L028,Achimota Residential Zone,Achimota,CustomerZone,5.718,-0.037
+L029,Dansoman Residential Zone,Dansoman,CustomerZone,5.717,-0.248
+L030,Labone Residential Zone,Labone,CustomerZone,5.708,0.006
+L031,Cantonments Residential Zone,Cantonments,CustomerZone,5.672,-0.226
+L032,Spintex Residential Zone,Spintex,CustomerZone,5.58,-0.155
+L033,Lapaz Residential Zone,Lapaz,CustomerZone,5.644,0.022
+L034,Kaneshie Residential Zone,Kaneshie,CustomerZone,5.609,0.054
+L035,Nungua Residential Zone,Nungua,CustomerZone,5.56,-0.24
+L036,Teshie Residential Zone,Teshie,CustomerZone,5.699,-0.067
+L037,Ashaiman Residential Zone,Ashaiman,CustomerZone,5.687,-0.009
+L038,Tesano Residential Zone,Tesano,CustomerZone,5.661,-0.271
+L039,Abelenkpe Residential Zone,Abelenkpe,CustomerZone,5.702,-0.159
+L040,Dzorwulu Residential Zone,Dzorwulu,CustomerZone,5.575,-0.12
+L041,Airport Residential Residential Zone,Airport Residential,CustomerZone,5.644,-0.005
+L042,Legon Residential Zone,Legon,CustomerZone,5.619,-0.075
+L043,Haatso Residential Zone,Haatso,CustomerZone,5.745,0.081
+L044,Ogbojo Residential Zone,Ogbojo,CustomerZone,5.565,-0.291
+L045,Sowutuom Residential Zone,Sowutuom,CustomerZone,5.552,-0.251
+L046,Mallam Residential Zone,Mallam,CustomerZone,5.555,-0.088
+L047,Weija Residential Zone,Weija,CustomerZone,5.634,-0.003
+L048,McCarthy Hill Residential Zone,McCarthy Hill,CustomerZone,5.69,0.022
+L049,Ablekuma Residential Zone,Ablekuma,CustomerZone,5.666,-0.116
+L050,Darkuman Residential Zone,Darkuman,CustomerZone,5.622,-0.175
+L051,Kasoa Residential Zone,Kasoa,CustomerZone,5.632,-0.179
+L052,Nungua Dispatch Hub,Nungua,RiderHub,5.602,0.036
+L053,Ashaiman Dispatch Hub,Ashaiman,RiderHub,5.68,-0.159
+L054,Dzorwulu Dispatch Hub,Dzorwulu,RiderHub,5.611,0.073
+L055,Kasoa Dispatch Hub,Kasoa,RiderHub,5.666,0.053
+L056,Labone Dispatch Hub,Labone,RiderHub,5.729,0.019
+L057,Dansoman Dispatch Hub,Dansoman,RiderHub,5.686,0.099
+L058,Accra Mall,Accra,Landmark,5.602,-0.164
+L059,37 Military Hospital Junction,Accra,Landmark,5.556,-0.227
+L060,Tetteh Quarshie Circle,Accra,Landmark,5.723,0.055
+L061,Kwame Nkrumah Circle,Accra,Landmark,5.694,0.022
+L062,Kotoka Airport Roundabout,Accra,Landmark,5.678,0.081
+L063,Achimota Overhead,Accra,Landmark,5.586,0.022
+L064,Nungua Barrier,Accra,Landmark,5.564,-0.195
+L065,Ashaiman Station,Accra,Landmark,5.565,-0.212
+L066,Kaneshie Market,Accra,Landmark,5.714,-0.237
+L067,Lapaz Station,Accra,Landmark,5.629,-0.148
