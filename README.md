@@ -196,13 +196,52 @@ verification rather than adding another major algorithm family:
   notes, and 5–8 minute demonstration script/video.**
 - **Perform a final live database/demo verification** before submission.
 
-## AI assistance disclosure
 
-Per Section 15(vi) of the project brief, any AI assistance used during
-development must be acknowledged. Keep the supporting prompts used during
-development with the final submission and make sure every team member can
-explain and modify the code they're responsible for defending in the oral demo.
+## AI Assistance & Academic Integrity
 
-Team (DCIT 204/308 joint project): Immanuel Oheneba Debe (22243130),
-Jonas Kudzo Amuzu (22198544), Cedric Dzodzodzi (22046156), and others
-per the project brief roster.
+This project was developed with the support of AI-assisted tools during selected stages of the development process, including code review, debugging, documentation, algorithmic clarification, and refinement of implementation ideas.
+
+In accordance with **Section 15(vi) of the DCIT 204/308 Joint DSA Semester Project Brief**, all AI assistance used during development is acknowledged. The use of AI was treated as a development aid rather than a replacement for the team's understanding, implementation, testing, or decision-making.
+
+### Use of AI Assistance
+
+AI tools were used selectively to support activities such as:
+
+* identifying and debugging implementation issues;
+* reviewing and improving code structure and readability;
+* clarifying data-structure and algorithm concepts;
+* suggesting approaches for testing, performance analysis, and documentation;
+* assisting with project organization and technical writing.
+
+All generated suggestions were reviewed, adapted, tested, and integrated by the project team where appropriate. The final implementation, database configuration, test results, performance measurements, demonstrations, and project-specific decisions remain the responsibility of the team.
+
+### Supporting Prompts
+
+The prompts and development interactions used during AI-assisted development have been retained and will be provided as part of the final project submission in accordance with the project requirements.
+
+### Team Accountability
+
+The project team acknowledges full responsibility for understanding and defending the submitted implementation. Every team member is expected to understand the data structure and algorithmic components relevant to their contribution and to be able to explain, modify, and demonstrate those components during the oral defense.
+
+### Project Team
+
+**DCIT 204/308 Joint DSA Semester Project**
+
+* **Immanuel Oheneba Debe** - 22243130
+* **Jonas Kudzo Amuzu** - 22198544
+* **Cedric Dzodzodzi** - 22046156
+* **Bilson Priscilla Essirifua** - 22015128
+* **Emerald Aryee** - 22032619
+* **Meshach Ashitei Amarh** - 22231662
+* **Bamfo Kwabena Asante** - 22262799
+* **Frederick Addison** -22310210
+* **Lawrencia Ametu** - 22413790
+* **Gladys Anobea Antwi** - 22376230
+* **Bernard Tetteh** - 22392052
+* **Samuel Osei- Bonsu** - 22380629
+* **Roland Otabil Kwesi** - 22268717
+* **Oduah Chisom** - 22254852
+* **Eduful Eugene Nana Yaw Addo** - 22383968
+
+> **Academic integrity statement:** AI-assisted development does not replace individual or team accountability. All team members remain responsible for the correctness, originality, understanding, and defense of the work submitted.
+
