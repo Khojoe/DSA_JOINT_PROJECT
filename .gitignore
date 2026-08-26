@@ -1,0 +1,11 @@
+target/
+.idea/
+*.iml
+out/
+*.class
+*.log
+
+# Environment / credentials
+.env
+.env.*
+!.env.example
