@@ -23,8 +23,18 @@ public final class Kruskal {
         DisjointSet ds = new DisjointSet();
         for (String id : locationIds) ds.makeSet(id);
 
+        // Defensive: ignore any road that references a location outside the
+        // given set, rather than letting DisjointSet blow up on an id it was
+        // never told about. This also covers the "invalid precondition" edge
+        // case the brief asks for (Section 10).
+        java.util.Set<String> knownIds = new java.util.HashSet<>(locationIds);
+
         MyPriorityQueue<Road> pq = new MyPriorityQueue<>(Comparator.comparingDouble(Road::effectiveWeight));
-        for (Road road : roads) pq.insert(road);
+        for (Road road : roads) {
+            if (knownIds.contains(road.getFromLocationId()) && knownIds.contains(road.getToLocationId())) {
+                pq.insert(road);
+            }
+        }
 
         List<Road> mstEdges = new ArrayList<>();
         double totalWeight = 0;

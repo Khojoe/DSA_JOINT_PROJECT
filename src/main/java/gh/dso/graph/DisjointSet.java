@@ -19,6 +19,10 @@ public class DisjointSet {
 
     /** Find with path compression. */
     public String find(String id) {
+        if (!parent.containsKey(id)) {
+            throw new IllegalArgumentException(
+                    "find() called on id that was never added via makeSet(): " + id);
+        }
         if (!parent.get(id).equals(id)) {
             parent.put(id, find(parent.get(id))); // path compression
         }

@@ -658,6 +658,9 @@ Main {
         lab.runSortBenchmarks(rnd);
         lab.runSearchBenchmarks(rnd);
         lab.runGraphBenchmarks(rnd);
+        lab.runTreeBenchmarks(rnd);
+        lab.runHashLoadFactorBenchmarks(rnd);
+        lab.runHeapBenchmarks(rnd);
         lab.printSummary();
 
         try {
@@ -665,6 +668,13 @@ Main {
             ConsoleUI.success("Exported results/performance_results.csv");
         } catch (Exception e) {
             ConsoleUI.error("CSV export failed: " + e.getMessage());
+        }
+
+        try {
+            lab.exportHashLoadCsv("results/hash_load_factor_results.csv");
+            ConsoleUI.success("Exported results/hash_load_factor_results.csv");
+        } catch (Exception e) {
+            ConsoleUI.error("Hash load-factor CSV export failed: " + e.getMessage());
         }
 
         try (Connection conn = DatabaseConnection.getConnection()) {
