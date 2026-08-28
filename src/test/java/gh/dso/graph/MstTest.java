@@ -71,4 +71,17 @@ class MstTest {
         // "Isolated" has no roads, so the MST can only ever connect A, B, C -> 2 edges
         assertTrue(result.edges().size() < locationIds.size() - 1);
     }
+
+    @Test
+    void prim_disconnectedGraph_returnsPartialMst() {
+        Graph g = new Graph();
+        for (Road r : sampleRoads()) g.addRoad(r);
+        g.addLocation("Isolated"); // isolated location
+
+        Prim.MstResult result = Prim.buildMst(g, "A");
+        // "Isolated" is not reachable from A, so MST should connect A, B, C, D (3 edges)
+        // rather than all 5 locations.
+        assertEquals(3, result.edges().size());
+        assertEquals(6.0, result.totalWeight(), 0.0001);
+    }
 }

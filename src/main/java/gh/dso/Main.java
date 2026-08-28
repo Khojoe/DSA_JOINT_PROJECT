@@ -42,8 +42,9 @@ import java.util.Scanner;
 
 /**
  * Examiner-friendly console entry point for the Ghana Courier DSO project.
- * The algorithms and data structures remain unchanged; this class organizes
- * the demonstrations into clear, evidence-oriented menus.
+ * The main menu separates live courier operations from the DSA evidence labs,
+ * so the same custom structures and algorithms can be demonstrated both in
+ * context and individually.
  */
 public class
 Main {
@@ -60,13 +61,15 @@ Main {
 
             switch (choice) {
                 case "1" -> dataLoadingMenu(scanner);
-                case "2" -> dataStructuresMenu(scanner);
-                case "3" -> searchSortMenu(scanner);
-                case "4" -> graphMenu(scanner);
-                case "5" -> schedulingMenu(scanner);
-                case "6" -> optimizationMenu(scanner);
-                case "7" -> performanceMenu(scanner);
-                case "8" -> dispatchMenu(scanner);
+                case "2" -> new CourierOperations().run(scanner);
+                case "3" -> dataStructuresMenu(scanner);
+                case "4" -> searchSortMenu(scanner);
+                case "5" -> graphMenu(scanner);
+                case "6" -> schedulingMenu(scanner);
+                case "7" -> optimizationMenu(scanner);
+                case "8" -> performanceMenu(scanner);
+                case "9" -> dispatchMenu(scanner);
+                case "10" -> generateTraceTables(scanner);
                 case "0" -> running = false;
                 default -> ConsoleUI.warning("Invalid option. Please select one of the displayed choices.");
             }
@@ -84,13 +87,15 @@ Main {
 
         ConsoleUI.section("MAIN MENU");
         ConsoleUI.menuItem("1", "Data Loading & Database");
-        ConsoleUI.menuItem("2", "Data Structures");
-        ConsoleUI.menuItem("3", "Searching & Sorting");
-        ConsoleUI.menuItem("4", "Graph Algorithms");
-        ConsoleUI.menuItem("5", "Dispatch Scheduling");
-        ConsoleUI.menuItem("6", "Optimization (Greedy vs DP)");
-        ConsoleUI.menuItem("7", "Performance Lab");
-        ConsoleUI.menuItem("8", "Integrated Dispatch");
+        ConsoleUI.menuItem("2", "Courier Operations (live DSA pipeline)");
+        ConsoleUI.menuItem("3", "Data Structures Lab / Evidence");
+        ConsoleUI.menuItem("4", "Searching & Sorting Lab");
+        ConsoleUI.menuItem("5", "Graph Algorithms / Routing");
+        ConsoleUI.menuItem("6", "Dispatch Scheduling");
+        ConsoleUI.menuItem("7", "Optimization (Greedy vs DP)");
+        ConsoleUI.menuItem("8", "Performance Lab");
+        ConsoleUI.menuItem("9", "Integrated Dispatch");
+        ConsoleUI.menuItem("10", "Generate Report Trace Tables (Markdown)");
         ConsoleUI.menuItem("0", "Exit");
     }
 
@@ -702,6 +707,21 @@ Main {
             System.out.println("Hint: run database/schema.sql and import the seed CSV files.");
             return null;
         }
+    }
+
+    private static void generateTraceTables(Scanner scanner) {
+        ConsoleUI.section("GENERATE COURSE BRIEF TRACE TABLES");
+        System.out.println("Generating the six required trace tables (Binary Search, Insertion Sort,");
+        System.out.println("Quick Sort, Dijkstra, Kruskal, and Knapsack DP tabulation)...");
+        try {
+            String traces = gh.dso.operations.TraceGenerator.generateAllTraces();
+            gh.dso.operations.TraceGenerator.saveTracesToFile("results/trace_tables.md", traces);
+            System.out.println(traces);
+            ConsoleUI.success("Trace tables successfully saved to: results/trace_tables.md");
+        } catch (Exception e) {
+            ConsoleUI.error("Failed to generate trace tables: " + e.getMessage());
+        }
+        ConsoleUI.pause(scanner);
     }
 
     private static <T> List<T> toList(MyLinkedList<T> source) {

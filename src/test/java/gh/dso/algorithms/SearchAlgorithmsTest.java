@@ -64,4 +64,18 @@ class SearchAlgorithmsTest {
         // log2(1000) ~= 10, so this should never need anywhere close to 1000 comparisons
         assertTrue(result.comparisons() <= 15);
     }
+
+    @Test
+    void binarySearch_unsortedInput_counterexample_failsToFindElement() {
+        // Binary search requires input to be sorted.
+        // On unsorted input, it might fail to find an element that actually exists.
+        List<Integer> unsorted = List.of(29, 4, 71, 15, 8, 42, 3);
+
+        // Element 8 is present in the list at index 4.
+        // However, binary search on this unsorted array will fail.
+        SearchResult result = SearchAlgorithms.binarySearch(unsorted, 8, asc);
+
+        // Assert that it returned -1 (not found) even though 8 is present
+        assertEquals(-1, result.index());
+    }
 }

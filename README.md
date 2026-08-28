@@ -4,7 +4,7 @@ DCIT 204/308 Joint DSA Semester Project. Local context: a courier/food
 delivery platform operating across Accra, Ghana (vendors, customer zones,
 rider hubs, and the road network between them).
 
-**Status: Core implementation is being finalized for submission. The remaining work is evidence generation, report preparation, performance plotting, and final end-to-end verification.**
+**Status: Core implementation complete. The application now exposes a live courier-operations workflow that connects MySQL data to custom DSA structures, search/sort algorithms, routing, scheduling, optimisation, and database write-back. Final submission evidence and end-to-end verification remain.**
 
 - Phase 1: dataset, database schema, seed data, custom data-structure
   library with unit tests, and a console demo that loads real data from
@@ -14,8 +14,8 @@ rider hubs, and the road network between them).
   verification must still be run on the team machine. DB load has previously been
   confirmed against a real MySQL instance (67 locations, 310 requests loaded live).
 - Phase 2: search & sort suite, graph engine (BFS/DFS/Dijkstra/Prim/
-  Kruskal + disjoint set), and a dispatch scheduling engine — all built
-  on top of the Phase 1 custom structures.
+  Kruskal + disjoint set), and a dispatch scheduling engine. These are now
+  exposed through live courier operations as well as dedicated evidence labs.
 - Phase 3: greedy nearest-rider dispatch (using real Dijkstra routing),
   a DP knapsack optimizer with a demonstrated greedy-vs-DP counterexample,
   an **IntegratedDispatchService** that runs the project's data, algorithms,
@@ -37,6 +37,66 @@ rider hubs, and the road network between them).
   optimizer (with a demonstrated greedy-vs-DP counterexample), and the
   IntegratedDispatchService that runs everything together as one real
   dispatch operation with database write-back and an audit trail.
+
+
+## Live courier operations
+
+The main application is not limited to isolated algorithm demonstrations. The
+**Courier Operations** menu loads current MySQL records and feeds them into the
+project's custom structures and algorithms:
+
+```
+MySQL Database
+      |
+      +-- Locations ----> MyLinkedList ----> BST location index
+      |
+      +-- Requests ------> MyLinkedList ----> Hash-table request index
+      |                         |
+      |                         +----> Linear / Binary Search
+      |                         |
+      |                         +----> Selection / Insertion / Merge / Quick Sort
+      |                         |
+      |                         +----> MyDeque / CircularQueue / Priority Heap
+      |
+      +-- Roads ----------> Graph ----> BFS / DFS / Dijkstra
+      |
+      +-- Resources ------> custom request/resource pipeline
+      |
+      +----------------------------------------------+
+                                                     |
+                                             Dispatch Engine
+                                                     |
+                              +----------------------+----------------+
+                              |                                       |
+                         Scheduling                           Optimisation
+                         FIFO / Priority                       Greedy / DP
+                              |                                       |
+                              +----------------------+----------------+
+                                                     |
+                                             Courier Assignment
+                                                     |
+                                             Database write-back
+```
+
+### Examples of real system use
+
+- **Linear search:** find a request by ID in the database-backed request set
+  without requiring sorted data.
+- **Binary search:** sort request IDs first, then locate a request in
+  `O(log n)` search steps.
+- **Sorting:** organise pending `NEW` requests by urgency, deadline, or
+  submission time before dispatch.
+- **Hash table:** index requests by request ID for direct operational lookup.
+- **BST:** index locations by name and report the search path and tree height.
+- **Queue/deque:** model normal FIFO work and move critical requests to the
+  front when appropriate.
+- **Priority queue/heap:** produce an urgency-first dispatch order.
+- **Dijkstra:** find the effective shortest route for a selected delivery.
+- **Greedy assignment:** suggest the nearest reachable available courier.
+
+The original **DSA Lab / Evidence** menus are retained so individual data
+structures and algorithms can still be demonstrated independently for marking
+and oral defence.
 
 ## Schema note
 

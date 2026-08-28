@@ -2,6 +2,7 @@ package gh.dso.scheduling;
 
 import gh.dso.datastructures.deque.MyDeque;
 import gh.dso.datastructures.heap.MyPriorityQueue;
+import gh.dso.algorithms.sort.SortAlgorithms;
 import gh.dso.model.ServiceRequest;
 
 import java.util.Comparator;
@@ -20,9 +21,9 @@ public class DispatchScheduler {
 
     /** Builds a FIFO dispatch queue ordered strictly by submission time. */
     public MyDeque<ServiceRequest> buildFifoQueue(List<ServiceRequest> requests) {
-        List<ServiceRequest> sortedBySubmission = requests.stream()
-                .sorted(Comparator.comparing(ServiceRequest::getTimeSubmitted))
-                .toList();
+        List<ServiceRequest> sortedBySubmission = new java.util.ArrayList<>(requests);
+        SortAlgorithms.insertionSort(sortedBySubmission,
+                Comparator.comparing(ServiceRequest::getTimeSubmitted));
 
         MyDeque<ServiceRequest> queue = new MyDeque<>();
         for (ServiceRequest r : sortedBySubmission) {
